@@ -52,23 +52,26 @@
       </div>
     </nav>
     <div style="margin: 75px 0 0 75px ;">
-    <h1>Episode List</h1>
+    <h1 id="nowplaying">Episode: 1</h1>
 	</div>
+
+
+	
+    <audio  id="audioplayer" controls="controls" style="margin-left:20px">
+        <source id="mp3source" src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/1.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+    </audio>	
+	<br>
 
     <div class="container">                                       
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">1-99
         <span class="caret"></span></button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="onehun">
+            <li onclick="LoadEpisode(1)"><a>1</a></li>
         </ul>
       </div>
     </div>
-	
-    <audio controls>
-        <source src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/17.mp3" type="audio/mpeg">
-         Your browser does not support the audio element.
-    </audio>	
-	<br>
 	
 
 
@@ -84,13 +87,19 @@
 	$(document).ready(function(){
         var count;
         for (count=1; count<100; count++) {
-            $("#onehun").append("<li><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }
+            $("#onehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
 	});
 	</script>
 
      <script>
-
+            function LoadEpisode(epnum){
+                $("#mp3source")
+                var src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/" + epnum + ".mp3",
+                    audioplayer=$('#audioplayer').attr('src',src)[0]
+                audioplayer.load()
+                $("#nowplaying").html("Episode: " + epnum)
+            }
     </script>
   </body>
 </html>
