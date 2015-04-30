@@ -63,19 +63,47 @@
     </audio>	
 	<br>
 
-    <div class="container">                                       
+    <div style="float:left"><h3>Select an Episode:</h3></div>
+
+    <div class="container" style="display:block; margin-top:20px; margin-right:initial; margin-left:200px">                                       
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">1-99
         <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="onehun">
-            <li onclick="LoadEpisode(1)"><a>1</a></li>
-        </ul>
+        <ul class="dropdown-menu" role="menu"id="onehun"></ul>
+      </div>
+    
+                                    
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">100-199
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="twohun"></ul>
+      </div>
+                                  
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">200-299
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="threehun"></ul>
+      </div>
+  
+                                    
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">300-399
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="fourhun"></ul>
+      </div>
+                                   
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">400-499
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="fivehun"></ul>
+      </div>
+                               
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">500-599
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="sixhun"></ul>
       </div>
     </div>
-	
-
-
-
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -83,21 +111,68 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
 	
-	<script>
-	$(document).ready(function(){
+    <script>
+    $(document).ready(function(){
         var count;
         for (count=1; count<100; count++) {
             $("#onehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
         }                   
-	});
-	</script>
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=100; count<200; count++) {
+            $("#twohun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=200; count<300; count++) {
+            $("#threehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=300; count<400; count++) {
+            $("#fourhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=400; count<500; count++) {
+            $("#fivehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=500; count<600; count++) {
+            $("#sixhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+
 
      <script>
             function LoadEpisode(epnum){
                 $("#mp3source")
                 var src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/" + epnum + ".mp3",
                     audioplayer=$('#audioplayer').attr('src',src)[0]
-                audioplayer.load()
+                audioplayer.play()
                 $("#nowplaying").html("Episode: " + epnum)
             }
     </script>
