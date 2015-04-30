@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>This American Life Episode List</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -18,18 +18,63 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
-	
-	<ol>
-		<li>test 1</li>
-	</ol>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li class="active"><a href="TAL\EpList.html">This American Life</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div style="margin: 75px 0 0 75px ;">
+    <h1>Episode List</h1>
+	</div>
+
+    <div class="container">                                       
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">1-99
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="onehun">
+        </ul>
+      </div>
+    </div>
 	
     <audio controls>
         <source src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/17.mp3" type="audio/mpeg">
          Your browser does not support the audio element.
     </audio>	
+	<br>
 	
-	
+
+
+
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -37,16 +82,20 @@
 	
 	<script>
 	$(document).ready(function(){
-		$("ol").append("<li>Appended item</li>");
+        $("#onehun").append("<li>Appended item</li>");
+
 	});
-	
-
-
-	
 	</script>
+
+     <script>
+        var count;
+        for (count=1; count<100; count++) {
+            $("#onehun").append("<li> <a href=\"http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/" + count + ".mp3\">" + count + "</a></li>");
+        }
+    </script>
   </body>
 </html>
-
+<!--
 <a href="http://www.thisamericanlife.org/radio-archives">Episode List</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/1.mp3">1</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/2.mp3">2</a>
