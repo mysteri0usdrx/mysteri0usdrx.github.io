@@ -82,20 +82,19 @@
 	
 	<script>
 	$(document).ready(function(){
-        $("#onehun").append("<li>Appended item</li>");
-
+        var count;
+        for (count=1; count<100; count++) {
+            $("#onehun").append("<li><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }
 	});
 	</script>
 
      <script>
-        var count;
-        for (count=1; count<100; count++) {
-            $("#onehun").append("<li> <a href=\"http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/" + count + ".mp3\">" + count + "</a></li>");
-        }
+
     </script>
   </body>
 </html>
-<!--
+<!-- <a href=\"http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/"
 <a href="http://www.thisamericanlife.org/radio-archives">Episode List</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/1.mp3">1</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/2.mp3">2</a>
@@ -697,3 +696,4 @@
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/598.mp3">598</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/599.mp3">599</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/600.mp3">600</a>
+-->
