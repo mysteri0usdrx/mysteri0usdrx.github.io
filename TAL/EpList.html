@@ -24,9 +24,11 @@
 		<li>test 1</li>
 	</ol>
 	
+    <audio controls>
+        <source src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/17.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+    </audio>	
 	
-	<script src="http://audio.thisamericanlife.org/widget/widget.min.js" type="text/javascript"></script>
-<div id="this-american-life-250" class="this-american-life" style="width:540px;"></div>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -38,19 +40,8 @@
 		$("ol").append("<li>Appended item</li>");
 	});
 	
-	$.ajax({
-    url:'http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/3.mp3',
-    type:'HEAD',
-    error:
-        function(){
-            $("ol").append("<li>asdf</li>");
-        },
-    success:
-        function(){
-            $("ol").append("<li>fgdsfd</li>");
-        }
-});
-	
+
+
 	
 	</script>
   </body>
