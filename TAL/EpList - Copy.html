@@ -1,3 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>This American Life Episode List</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li class="active"><a href="TAL\EpList.html">This American Life</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <div style="margin-left:10px">
+  <div style="margin: 75px 0 0 75px ;">
+    <h1 id="nowplaying">Episode: 1</h1>
+	</div>
+
+
+	
+    <audio  id="audioplayer" controls="controls" style="margin-left:20px">
+        <source id="mp3source" src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/1.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+    </audio>	
+  <br>
+  <div id="episodeframe" style="width:400px">
+  <iframe style="width:350px" src="http://m.thisamericanlife.org/radio-archives/episode/1"></iframe>
+  </div>
+  <br>
+    <div style="float:left"><a href="http://m.thisamericanlife.org/"><h3>Select an Episode:</h3></a></div>
+
+    <div class="container" style="display:block; margin-top:20px; margin-right:initial; margin-left:200px">                                       
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">1-99
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="onehun"></ul>
+      </div>
+    
+                                    
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">100-199
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="twohun"></ul>
+      </div>
+                                  
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">200-299
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="threehun"></ul>
+      </div>
+  
+                                    
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">300-399
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="fourhun"></ul>
+      </div>
+                                   
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">400-499
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="fivehun"></ul>
+      </div>
+                               
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">500-599
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"id="sixhun"></ul>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+	
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=1; count<100; count++) {
+            $("#onehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=100; count<200; count++) {
+            $("#twohun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=200; count<300; count++) {
+            $("#threehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=300; count<400; count++) {
+            $("#fourhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=400; count<500; count++) {
+            $("#fivehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var count;
+        for (count=500; count<600; count++) {
+            $("#sixhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                   
+    });
+    </script>
+
+
+
+     <script>
+            function LoadEpisode(epnum){
+                $("#mp3source")
+                var src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/" + epnum + ".mp3",
+                    audioplayer=$('#audioplayer').attr('src',src)[0]
+                audioplayer.play()
+                $("#nowplaying").html("Episode: " + epnum)
+
+                $("#episodeframe").html("<iframe style=\"width:350px\" id=\"episodeframe\" src=\"http://m.thisamericanlife.org/radio-archives/episode/" + epnum + "\"></iframe>")
+
+            }
+    </script>
+  </body>
+</html>
+<!-- <a href=\"http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/"
 <a href="http://www.thisamericanlife.org/radio-archives">Episode List</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/1.mp3">1</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/2.mp3">2</a>
@@ -599,3 +789,4 @@
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/598.mp3">598</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/599.mp3">599</a>
 <a href="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/600.mp3">600</a>
+-->

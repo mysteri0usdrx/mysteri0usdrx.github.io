@@ -16,6 +16,10 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
   </head>
   <body>
 
@@ -28,29 +32,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Bootstrap theme</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="../index.html">Home</a></li>
             <li class="active"><a href="TAL\EpList.html">This American Life</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+
+
 
   <div style="margin-left:10px">
   <div style="margin: 75px 0 0 75px ;">
@@ -110,68 +103,50 @@
       </div>
     </div>
     </div>
+    <script>
+    window.setInterval(function(){
+    var playerTime = audioplayer.currentTime;
+    localStorage.setItem("lastTime", playerTime);
+    }, 5000);
+    </script>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
+
+
 	
     <script>
     $(document).ready(function(){
         var count;
         for (count=1; count<100; count++) {
             $("#onehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }                   
-    });
-    </script>
-
-    <script>
-    $(document).ready(function(){
-        var count;
+        }   
         for (count=100; count<200; count++) {
             $("#twohun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }                   
-    });
-    </script>
-
-    <script>
-    $(document).ready(function(){
-        var count;
+        }
         for (count=200; count<300; count++) {
             $("#threehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }                   
-    });
-    </script>
-
-    <script>
-    $(document).ready(function(){
-        var count;
+        }
         for (count=300; count<400; count++) {
             $("#fourhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }                   
-    });
-    </script>
-
-    <script>
-    $(document).ready(function(){
-        var count;
+        }
         for (count=400; count<500; count++) {
             $("#fivehun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }                   
+        }
+        for (count=500; count<600; count++) {
+            $("#sixhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
+        }                
     });
     </script>
 
     <script>
     $(document).ready(function(){
-        var count;
-        for (count=500; count<600; count++) {
-            $("#sixhun").append("<li onclick=\"LoadEpisode(" + count + ")\"><a id=\"episode" + count + "\">" + count + "</a></li>");
-        }                   
+      lastEp = localStorage.getItem("lastEpNum");
+      var setTime = localStorage.getItem("lastTime")
+      LoadEpisode(lastEp);
+      audioplayer.currentTime = setTime;
+      audioplayer.pause();
     });
     </script>
-
-
 
      <script>
             function LoadEpisode(epnum){
@@ -183,8 +158,10 @@
 
                 $("#episodeframe").html("<iframe style=\"width:350px\" id=\"episodeframe\" src=\"http://m.thisamericanlife.org/radio-archives/episode/" + epnum + "\"></iframe>")
 
+                localStorage.setItem("lastEpNum",epnum)
             }
     </script>
+
   </body>
 </html>
 <!-- <a href=\"http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/"
