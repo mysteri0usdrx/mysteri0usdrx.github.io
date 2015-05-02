@@ -20,6 +20,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
+
+    <style>
+    .dropdown{
+      float:left;
+    }
+
+
+
+    </style>
   </head>
   <body>
 
@@ -47,23 +56,23 @@
 
   <div style="display:block;margin-left:auto;margin-right:auto;width:500px;">
   <div style="margin: 75px 0 0 75px ;">
-    <h1 id="nowplaying">Episode: 1</h1>
+    <h1 id="nowplaying" style="text-align:center">Episode: 1</h1>
 	</div>
 
 
 	
-    <audio  id="audioplayer" controls="controls" style="margin-left:20px">
+    <audio  id="audioplayer" controls="controls" style="margin-left:10px;width:630px">
         <source id="mp3source" src="http://audio.thisamericanlife.org/jomamashouse/ismymamashouse/1.mp3" type="audio/mpeg">
          Your browser does not support the audio element.
     </audio>	
   <br>
-  <div id="episodeframe" style="width:400px">
-  <iframe style="width:350px" src="http://m.thisamericanlife.org/radio-archives/episode/1"></iframe>
+  <div id="episodeframe" style="width:650px;height:203px">
+  <iframe src="http://m.thisamericanlife.org/radio-archives/episode/1"></iframe>
   </div>
   <br>
-    <div style="float:left"><a href="http://m.thisamericanlife.org/"><h3>Select an Episode:</h3></a></div>
+    <div style="float:left;margin-top:5px"><a href="http://m.thisamericanlife.org/"><h3 style="margin-top:5px">Select an Episode:</h3></a></div>
 
-    <div class="container" style="display:block; margin-top:20px; margin-right:initial; margin-left:200px">                                       
+    <div class="container" style="display:inline-block;margin-right:initial;">                                       
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">1-99
         <span class="caret"></span></button>
@@ -158,7 +167,7 @@
                 audioplayer.play()
                 $("#nowplaying").html("Episode: " + epnum)
 
-                $("#episodeframe").html("<iframe style=\"width:350px\" id=\"episodeframe\" src=\"http://m.thisamericanlife.org/radio-archives/episode/" + epnum + "\"></iframe>")
+                $("#episodeframe").html("<iframe style=\"width:650px;height:203px;\" id=\"episodeframe\" src=\"http://m.thisamericanlife.org/radio-archives/episode/" + epnum + "\"></iframe>")
 
                 localStorage.setItem("lastEpNum",epnum)
             }
