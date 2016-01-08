@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
+    
+    <script src="js/spritespin.js"></script>
+    
     <title>Homepage</title>
 
     <!-- Bootstrap core CSS -->
@@ -65,8 +67,21 @@
         <h1>Theme example</h1>
         <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
       </div>
-
-
+      
+      
+      <div id='mySpriteSpin'/>
+      
+      <script type='text/javascript'>
+		  $("#mySpriteSpin").spritespin({
+		  source  : "http://vignette3.wikia.nocookie.net/disney-infinity/images/a/ac/Green-goblin-sprite-98696436293fd24fee1cdf7035e09c06.png", // path to sprite sheet
+		  width   : 378,  // width in pixels of the window/frame
+		  height  : 388,  // height in pixels of the window/frame
+		  frames  : 40,   // total number of frames
+		  framesX : 8     // number of frames in one row inside the spritesheet
+		  });
+		  </script>
+		  
+		  
       <div class="page-header">
         <h1>Buttons</h1>
       </div>
