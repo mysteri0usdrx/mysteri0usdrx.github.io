@@ -1,0 +1,14 @@
+
+#bodyContainer {
+    width:1250px;
+    margin:0 auto; 
+    text-align:center;
+}
+body{
+    background-color:black;
+    color:grey;
+}
+#heroChart {
+    margin-top:10px;
+    text-align:center;
+}
